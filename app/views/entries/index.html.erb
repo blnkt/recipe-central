@@ -1,6 +1,6 @@
-<h1>Recipe Central!</h1>
+<!-- <h1>Recipe Central!</h1> -->
 
-<h3>Recipes:</h3>
+<h3 id= 'test'>Recipes:</h3>
 
 <ul>
   <% @entries.sort_by{|entry| entry.average_rating.to_f}.reverse.each do |entry| %>
@@ -8,5 +8,5 @@
   <% end %>
 </ul>
 
-<p><a href="/new-entry">Submit your own recipe</a></p>
-<p><a href="/new-tag">Create a tag</a></p>
+<!-- <p><a href="/new-entry">Submit your own recipe</a></p>
+<p><a href="/new-tag">Create a tag</a></p> -->

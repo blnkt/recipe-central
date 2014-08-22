@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Recipe</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= flash[:notice] %>
-<%= flash[:alert] %>
-<%= yield %>
-
-</body>
+  <head>
+    <title>Recipe</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container" id='wrapper'>
+      <div id="sidebar-wrapper">
+          <ul class="sidebar-nav">
+            <li class="sidebar-brand"><a href="/">Home</a></li>
+            <li><a href="/new-entry">Add a New Recipe</a></li>
+            <li><a href="/new-tag">Add a New Tag</a></li>
+            <!-- <li><a href="#">Last link</a></li> -->
+          </ul>
+      </div>
+      <div id="page-content-wrapper">
+        <h1><a href="/">Recipe Central!</a></h1>
+        <div class="page-content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <ul class="nav nav-tabs" role="tablist">
+                  <li class="active"><a href="/">Recipes</a></li>
+                  <li><a href="/new-tag">Tags</a></li>
+                </ul>
+                <%= flash[:notice] %>
+                <%= flash[:alert] %>
+                <%= yield %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

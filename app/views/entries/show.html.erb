@@ -1,16 +1,16 @@
-<h1><%= @entry.name %></h1>
-<h2>Rating (1 to 5 Stars): <%=@entry.average_rating%><br> Total Ratings: <%=@entry.total_ratings%></h2>
-<h3>Tags:
+<h2><%= @entry.name %></h2>
+<h3>Rating (1 to 5 Stars): <%=@entry.average_rating%><br> Total Ratings: <%=@entry.total_ratings%></h3>
+<h4>Tags:
 <% @entry.tags.each do |tag| %>
   <span><%= tag.name + " " %></span>
 <%end%>
-</h3>
+</h4>
 
-<h3>Recipe:</h3>
+<h4>Recipe:</h4>
 <p><%= @entry.description %></p>
 
 
-<h4>Add a Rating:</h4>
+<h5>Add a Rating:</h5>
 
 <%= render('layouts/errors', :object => @rating) %>
 
@@ -20,5 +20,5 @@
 <button>Add Rating</button>
 </form>
 <p><a href="/edit/<%= @entry.id %>">Edit this recipe</a></p>
-<p><a href="/">Back to main page</a></p>
-<p><a href="/new-tag">Create a tag</a></p>
+<!-- <p><a href="/">Back to main page</a></p>
+<p><a href="/new-tag">Create a tag</a></p> -->
