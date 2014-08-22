@@ -14,7 +14,7 @@ class EntriesController < ApplicationController
     @entries = Entry.all
     @entry = Entry.new(params[:entry])
     if @entry.save
-      @entry.add_tag(params)
+      @entry.add_tag(params) unless Tag.all.empty?
       flash[:notice] = "Your recipe was added!"
       redirect_to("/")
     else
